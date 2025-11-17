@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QBfoL6DW174=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hro10\\Desktop\\C#\\oppgave 3\\kalkulator\\kalkulator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hro10\\.nuget\\packages\\spectre.console\\0.54.0\\spectre.console.0.54.0.nupkg.sha512"
+  ],
+  "logs": []
+}

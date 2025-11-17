@@ -1,0 +1,17 @@
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\bin\Debug\net8.0\kalkulator.exe
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\bin\Debug\net8.0\kalkulator.deps.json
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\bin\Debug\net8.0\kalkulator.runtimeconfig.json
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\bin\Debug\net8.0\kalkulator.dll
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\bin\Debug\net8.0\kalkulator.pdb
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.AssemblyInfoInputs.cache
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.AssemblyInfo.cs
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.csproj.CoreCompileInputs.cache
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.dll
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\refint\kalkulator.dll
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.pdb
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.genruntimeconfig.cache
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\ref\kalkulator.dll
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\bin\Debug\net8.0\Spectre.Console.dll
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.csproj.AssemblyReference.cache
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.csproj.Up2Date
