@@ -15,3 +15,4 @@ C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\ref\kalkulator.d
 C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\bin\Debug\net8.0\Spectre.Console.dll
 C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.csproj.AssemblyReference.cache
 C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.csproj.Up2Date
+C:\Users\hro10\Desktop\C#\oppgave 3\kalkulator\obj\Debug\net8.0\kalkulator.sourcelink.json

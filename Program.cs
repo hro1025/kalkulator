@@ -15,6 +15,8 @@ class Program
         int inputSecondNumberInt;
         double inputSecondNumberDouble;
 
+        bool useInt;
+
         while (true)
         {
             Console.Write("Skriv første tall: ");
@@ -22,10 +24,12 @@ class Program
 
             if (int.TryParse(inputFirstNumber, out inputFirstNumberInt))
             {
+                useInt = true;
                 break;
             }
-            if (double.TryParse(inputFirstNumber, out inputFirstNumberDouble))
+            else if (double.TryParse(inputFirstNumber, out inputFirstNumberDouble))
             {
+                useInt = false;
                 break;
             }
             else
@@ -41,10 +45,12 @@ class Program
 
             if (int.TryParse(inputSecondNumber, out inputSecondNumberInt))
             {
+                useInt = true;
                 break;
             }
-            if (double.TryParse(inputSecondNumber, out inputSecondNumberDouble))
+            else if (double.TryParse(inputSecondNumber, out inputSecondNumberDouble))
             {
+                useInt = false;
                 break;
             }
             else
@@ -54,21 +60,32 @@ class Program
         }
 
         Console.WriteLine("Hva slags formel vil du bruke?\n1:  +\n2:  -\n3:  *");
+        Console.WriteLine();
 
         while (true)
         {
-            string? input3 = Console.ReadLine();
-            if (input3 == "1")
+            Console.Write("------->  ");
+            string? inputChoose = Console.ReadLine();
+            if (inputChoose == "1")
             {
-                Console.WriteLine("1");
+                if (useInt)
+                {
+                    Console.WriteLine(calc.AddNumbers(inputFirstNumberInt, inputSecondNumberInt));
+                }
+                else
+                {
+                    Console.WriteLine(
+                        calc.AddNumbers(inputFirstNumberDouble, inputSecondNumberDouble)
+                    );
+                }
                 break;
             }
-            else if (input3 == "2")
+            else if (inputChoose == "2")
             {
                 Console.WriteLine("2");
                 break;
             }
-            else if (input3 == "3")
+            else if (inputChoose == "3")
             {
                 Console.WriteLine("3");
                 break;
