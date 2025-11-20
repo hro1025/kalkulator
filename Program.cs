@@ -6,7 +6,7 @@ public class Program
     {
         Kalkulator calc = new Kalkulator();
 
-        int inputFirstNumberInt = Cli.;
+        int inputFirstNumberInt;
         double inputFirstNumberDouble;
 
         int inputSecondNumberInt;
@@ -19,7 +19,6 @@ public class Program
 
             if (int.TryParse(inputFirstNumber, out inputFirstNumberInt))
             {
-                inputFirstNumberDouble = inputFirstNumberInt;
                 break;
             }
             else if (double.TryParse(inputFirstNumber, out inputFirstNumberDouble))
@@ -39,8 +38,6 @@ public class Program
 
             if (int.TryParse(inputSecondNumber, out inputSecondNumberInt))
             {
-                inputSecondNumberDouble = inputSecondNumberInt;
-
                 break;
             }
             else if (double.TryParse(inputSecondNumber, out inputSecondNumberDouble))
@@ -54,7 +51,7 @@ public class Program
         }
     }
 
-    public static async Task Main()
+    public async Task Await()
     {
         var cli = new Cli();
         await cli.RunCli();

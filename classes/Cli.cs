@@ -14,7 +14,7 @@ public class Cli
     public bool FirstIsInt { get; set; }
     public bool SecondIsInt { get; set; }
 
-    public async Task RunCli()
+    public Task RunCli()
     {
         while (true)
         {
@@ -69,7 +69,7 @@ public class Cli
                     }
                     break;
                 case "Exit":
-                    return;
+                    break;
             }
         }
     }
