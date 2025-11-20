@@ -6,13 +6,11 @@ using Spectre.Console;
 public class Cli
 {
     Kalkulator calc = new Kalkulator();
-    public int InputFirstNumberInt { get; set; }
-    public int InputSecondNumberInt { get; set; }
+    int InputFirstNumberInt { get; set; }
+    int InputSecondNumberInt { get; set; }
 
-    public double InputFirstNumberDouble { get; set; }
-    public double InputSecondNumberDouble { get; set; }
-    public bool FirstIsInt { get; set; }
-    public bool SecondIsInt { get; set; }
+    double InputFirstNumberDouble { get; set; }
+    double InputSecondNumberDouble { get; set; }
 
     public Task RunCli()
     {
