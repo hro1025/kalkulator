@@ -1,101 +1,109 @@
 ﻿using System.Threading.Tasks.Dataflow;
+using kalkulator;
 using Spectre.Console;
 
-namespace kalkulator;
+Kalkulator calc = new Kalkulator();
 
-class Program
+int inputFirstNumberInt;
+double inputFirstNumberDouble;
+
+int inputSecondNumberInt;
+double inputSecondNumberDouble;
+
+bool firstIsInt;
+bool secondIsInt;
+
+while (true)
 {
-    static void Main(string[] args)
+    Console.Write("Skriv første tall: ");
+    string? inputFirstNumber = Console.ReadLine();
+
+    if (int.TryParse(inputFirstNumber, out inputFirstNumberInt))
     {
-        Kalkulator calc = new Kalkulator();
+        inputFirstNumberDouble = inputFirstNumberInt;
+        firstIsInt = true;
+        break;
+    }
+    else if (double.TryParse(inputFirstNumber, out inputFirstNumberDouble))
+    {
+        firstIsInt = false;
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Bare tall, prøv igjen.");
+    }
+}
 
-        int inputFirstNumberInt;
-        double inputFirstNumberDouble;
+while (true)
+{
+    Console.Write("Skriv andre tall: ");
+    string? inputSecondNumber = Console.ReadLine();
 
-        int inputSecondNumberInt;
-        double inputSecondNumberDouble;
+    if (int.TryParse(inputSecondNumber, out inputSecondNumberInt))
+    {
+        inputSecondNumberDouble = inputSecondNumberInt;
+        secondIsInt = true;
+        break;
+    }
+    else if (double.TryParse(inputSecondNumber, out inputSecondNumberDouble))
+    {
+        secondIsInt = false;
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Bare tall, prøv igjen.");
+    }
+}
 
-        bool useInt;
+Console.WriteLine("Hva slags formel vil du bruke?\n1:  +\n2:  -\n3:  *");
+Console.WriteLine();
 
-        while (true)
+while (true)
+{
+    Console.Write("------->  ");
+    string? inputChoose = Console.ReadLine();
+    if (inputChoose == "1")
+    {
+        if (firstIsInt && secondIsInt)
         {
-            Console.Write("Skriv første tall: ");
-            string? inputFirstNumber = Console.ReadLine();
-
-            if (int.TryParse(inputFirstNumber, out inputFirstNumberInt))
-            {
-                useInt = true;
-                break;
-            }
-            else if (double.TryParse(inputFirstNumber, out inputFirstNumberDouble))
-            {
-                useInt = false;
-                break;
-            }
-            else
-            {
-                Console.WriteLine("Bare tall, prøv igjen.");
-            }
+            Console.WriteLine(calc.AddNumbers(inputFirstNumberInt, inputSecondNumberInt));
         }
-
-        while (true)
+        else
         {
-            Console.Write("Skriv andre tall: ");
-            string? inputSecondNumber = Console.ReadLine();
-
-            if (int.TryParse(inputSecondNumber, out inputSecondNumberInt))
-            {
-                useInt = true;
-                break;
-            }
-            else if (double.TryParse(inputSecondNumber, out inputSecondNumberDouble))
-            {
-                useInt = false;
-                break;
-            }
-            else
-            {
-                Console.WriteLine("Bare tall, prøv igjen.");
-            }
+            Console.WriteLine(calc.AddNumbers(inputFirstNumberDouble, inputSecondNumberDouble));
         }
-
-        Console.WriteLine("Hva slags formel vil du bruke?\n1:  +\n2:  -\n3:  *");
-        Console.WriteLine();
-
-        while (true)
+        break;
+    }
+    else if (inputChoose == "2")
+    {
+        if (firstIsInt && secondIsInt)
         {
-            Console.Write("------->  ");
-            string? inputChoose = Console.ReadLine();
-            if (inputChoose == "1")
-            {
-                if (useInt)
-                {
-                    Console.WriteLine(calc.AddNumbers(inputFirstNumberInt, inputSecondNumberInt));
-                }
-                else
-                {
-                    Console.WriteLine(
-                        calc.AddNumbers(inputFirstNumberDouble, inputSecondNumberDouble)
-                    );
-                }
-                break;
-            }
-            else if (inputChoose == "2")
-            {
-                Console.WriteLine("2");
-                break;
-            }
-            else if (inputChoose == "3")
-            {
-                Console.WriteLine("3");
-                break;
-            }
-            else
-            {
-                Console.WriteLine("velg 1, 2 eller 3");
-            }
+            Console.WriteLine(calc.SubtractNumbers(inputFirstNumberInt, inputSecondNumberInt));
         }
-
-        // Console.WriteLine(calc.AddNumbers(input1, input2));
+        else
+        {
+            Console.WriteLine(
+                calc.SubtractNumbers(inputFirstNumberDouble, inputSecondNumberDouble)
+            );
+        }
+        break;
+    }
+    else if (inputChoose == "3")
+    {
+        if (firstIsInt && secondIsInt)
+        {
+            Console.WriteLine(calc.MultiplyNumber(inputFirstNumberInt, inputSecondNumberInt));
+        }
+        else
+        {
+            Console.WriteLine(calc.MultiplyNumber(inputFirstNumberDouble, inputSecondNumberDouble));
+        }
+        break;
+    }
+    else
+    {
+        Console.WriteLine("velg 1, 2 eller 3");
     }
 }
