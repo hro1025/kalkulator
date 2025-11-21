@@ -2,15 +2,17 @@
 
 public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Kalkulator calc = new Kalkulator();
+        Cli cli = new Cli();
 
-        int inputFirstNumberInt;
-        double inputFirstNumberDouble;
+        int inputFirstNumberInt = 0;
+        double inputFirstNumberDouble = 0;
 
-        int inputSecondNumberInt;
-        double inputSecondNumberDouble;
+        int inputSecondNumberInt = 0;
+        double inputSecondNumberDouble = 0;
+
+        bool useInt;
 
         while (true)
         {
@@ -19,10 +21,12 @@ public class Program
 
             if (int.TryParse(inputFirstNumber, out inputFirstNumberInt))
             {
+                useInt = true;
                 break;
             }
             else if (double.TryParse(inputFirstNumber, out inputFirstNumberDouble))
             {
+                useInt = false;
                 break;
             }
             else
@@ -36,11 +40,11 @@ public class Program
             Console.Write("Skriv andre tall: ");
             string? inputSecondNumber = Console.ReadLine();
 
-            if (int.TryParse(inputSecondNumber, out inputSecondNumberInt))
+            if (useInt && int.TryParse(inputSecondNumber, out inputSecondNumberInt))
             {
                 break;
             }
-            else if (double.TryParse(inputSecondNumber, out inputSecondNumberDouble))
+            else if (!useInt && double.TryParse(inputSecondNumber, out inputSecondNumberDouble))
             {
                 break;
             }
@@ -49,11 +53,21 @@ public class Program
                 Console.WriteLine("Bare tall, prøv igjen.");
             }
         }
-    }
 
-    public async Task Await()
-    {
-        var cli = new Cli();
-        await cli.RunCli();
+        if (useInt)
+        {
+            cli.UseInt = true;
+
+            cli.FirstNumberInt = inputFirstNumberInt;
+            cli.SecondNumberInt = inputSecondNumberInt;
+        }
+        else
+        {
+            cli.UseInt = false;
+            cli.FirstNumberDouble = inputFirstNumberDouble;
+            cli.SecondNumberDouble = inputSecondNumberDouble;
+        }
+
+        cli.RunCli();
     }
 }

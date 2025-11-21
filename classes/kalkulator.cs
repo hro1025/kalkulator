@@ -31,4 +31,14 @@ public class Kalkulator
     {
         return a * b;
     }
+
+    public int DivisionNumber(int a, int b)
+    {
+        return a / b;
+    }
+
+    public double DivisionNumber(double a, double b)
+    {
+        return a / b;
+    }
 }

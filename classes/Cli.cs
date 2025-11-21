@@ -1,73 +1,70 @@
 namespace kalkulator;
 
-using Microsoft.VisualBasic;
 using Spectre.Console;
 
 public class Cli
 {
-    Kalkulator calc = new Kalkulator();
-    int InputFirstNumberInt { get; set; }
-    int InputSecondNumberInt { get; set; }
+    private readonly Kalkulator calc = new Kalkulator();
 
-    double InputFirstNumberDouble { get; set; }
-    double InputSecondNumberDouble { get; set; }
+    public bool UseInt { get; set; }
 
-    public Task RunCli()
+    public int FirstNumberInt { get; set; }
+    public int SecondNumberInt { get; set; }
+
+    public double FirstNumberDouble { get; set; }
+    public double SecondNumberDouble { get; set; }
+
+    public void RunCli()
     {
         while (true)
         {
-            var choise = AnsiConsole.Prompt(
+            var choice = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                    .Title("Velg fin formel som du vil bruke")
-                    .AddChoices(new[] { "+", "-", "*", "Exit" })
+                    .Title("Velg formel du vil bruke")
+                    .AddChoices(new[] { "+", "-", "*", "/", "Exit" })
             );
 
-            switch (choise)
+            switch (choice)
             {
                 case "+":
-                    if (FirstIsInt && SecondIsInt)
-                    {
-                        Console.WriteLine(
-                            calc.AddNumbers(InputFirstNumberInt, InputSecondNumberInt)
-                        );
-                    }
+                    if (UseInt)
+                        Console.WriteLine(calc.AddNumbers(FirstNumberInt, SecondNumberInt));
                     else
-                    {
-                        Console.WriteLine(
-                            calc.AddNumbers(InputFirstNumberDouble, InputSecondNumberDouble)
-                        );
-                    }
+                        Console.WriteLine(calc.AddNumbers(FirstNumberDouble, SecondNumberDouble));
+                    Environment.Exit(0);
                     break;
+
                 case "-":
-                    if (FirstIsInt && SecondIsInt)
-                    {
-                        Console.WriteLine(
-                            calc.SubtractNumbers(InputFirstNumberInt, InputSecondNumberInt)
-                        );
-                    }
+                    if (UseInt)
+                        Console.WriteLine(calc.SubtractNumbers(FirstNumberInt, SecondNumberInt));
                     else
-                    {
                         Console.WriteLine(
-                            calc.SubtractNumbers(InputFirstNumberDouble, InputSecondNumberDouble)
+                            calc.SubtractNumbers(FirstNumberDouble, SecondNumberDouble)
                         );
-                    }
+                    Environment.Exit(0);
                     break;
+
                 case "*":
-                    if (FirstIsInt && SecondIsInt)
-                    {
-                        Console.WriteLine(
-                            calc.MultiplyNumber(InputFirstNumberInt, InputSecondNumberInt)
-                        );
-                    }
+                    if (UseInt)
+                        Console.WriteLine(calc.MultiplyNumber(FirstNumberInt, SecondNumberInt));
                     else
-                    {
                         Console.WriteLine(
-                            calc.MultiplyNumber(InputFirstNumberDouble, InputSecondNumberDouble)
+                            calc.MultiplyNumber(FirstNumberDouble, SecondNumberDouble)
                         );
-                    }
+                    Environment.Exit(0);
                     break;
+                case "/":
+                    if (UseInt)
+                        Console.WriteLine(calc.DivisionNumber(FirstNumberInt, SecondNumberInt));
+                    else
+                        Console.WriteLine(
+                            calc.DivisionNumber(FirstNumberDouble, SecondNumberDouble)
+                        );
+                    Environment.Exit(0);
+                    break;
+
                 case "Exit":
-                    break;
+                    return;
             }
         }
     }
