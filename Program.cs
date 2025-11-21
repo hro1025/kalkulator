@@ -5,15 +5,16 @@ public class Program
     public static void Main(string[] args)
     {
         Cli cli = new Cli();
-
+        // Here is the input safed
         int inputFirstNumberInt = 0;
         double inputFirstNumberDouble = 0;
 
         int inputSecondNumberInt = 0;
         double inputSecondNumberDouble = 0;
 
-        bool useInt;
+        bool useInt; // i use bool to say what kind of input it is (int / double)
 
+        // first input in a loop
         while (true)
         {
             Console.Write("Skriv første tall: ");
@@ -34,7 +35,7 @@ public class Program
                 Console.WriteLine("Bare tall, prøv igjen.");
             }
         }
-
+        // second input in a loop
         while (true)
         {
             Console.Write("Skriv andre tall: ");
@@ -53,7 +54,7 @@ public class Program
                 Console.WriteLine("Bare tall, prøv igjen.");
             }
         }
-
+        // program sends the value over to Cli
         if (useInt)
         {
             cli.UseInt = true;

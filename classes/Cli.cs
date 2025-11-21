@@ -4,8 +4,9 @@ using Spectre.Console;
 
 public class Cli
 {
-    private readonly Kalkulator calc = new Kalkulator();
+    private readonly Kalkulator calc = new Kalkulator(); // get the math
 
+    // here does the programm get the value from Program.cs
     public bool UseInt { get; set; }
 
     public int FirstNumberInt { get; set; }
@@ -14,7 +15,7 @@ public class Cli
     public double FirstNumberDouble { get; set; }
     public double SecondNumberDouble { get; set; }
 
-    public void RunCli()
+    public void RunCli() // starts the Cli in a loop
     {
         while (true)
         {
@@ -24,7 +25,7 @@ public class Cli
                     .AddChoices(new[] { "+", "-", "*", "/", "Exit" })
             );
 
-            switch (choice)
+            switch (choice) //choose the answer based on the users input
             {
                 case "+":
                     if (UseInt)
